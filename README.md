@@ -13,6 +13,11 @@ A full-stack project management application built with .NET Core Web API and Rea
 - **Real-time Updates**: Dynamic project and task management
 - **Secure API**: Protected endpoints with JWT authorization
 
+## 🌐 Live Application
+
+- **Frontend**: [https://mini-project-manager-lake.vercel.app/register](https://mini-project-manager-lake.vercel.app)
+- **Backend API**: [https://mini-project-manager-wr5q.onrender.com](https://mini-project-manager-wr5q.onrender.com)
+
 ## 🏗️ Architecture
 
 The project consists of two main components:
@@ -357,10 +362,6 @@ npm test
 
 ## 🚀 Deployment
 
-### 🌐 Live Application
-
-- **Frontend**: [https://mini-project-manager-lake.vercel.app/register](https://mini-project-manager-lake.vercel.app)
-- **Backend API**: [https://mini-project-manager-wr5q.onrender.com](https://mini-project-manager-wr5q.onrender.com)
 
 ### Backend Deployment
 
@@ -419,38 +420,10 @@ The application uses SQLite by default. For production, consider:
 - Tailwind CSS 3.4.18
 - Axios 1.12.2
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is part of the Appsian Coding Assignment.
-
 ## 🐛 Known Issues
 
-- SQLite database file is included in the repository (should be in .gitignore for production)
 - No password strength validation on the frontend
 - No email verification for user registration
 - No password reset functionality
 
-## 🔮 Future Enhancements
 
-- Email verification for user registration
-- Password reset functionality
-- Project sharing and collaboration
-- File attachments for tasks
-- Task comments and discussions
-- Real-time notifications
-- Mobile app development
-- Advanced project analytics and reporting
-- Team management and user roles
-- Project templates and cloning
-- Export/import functionality
-- Project completion percentage tracking
-- Task priority levels and deadlines
-- Automated project status notifications
