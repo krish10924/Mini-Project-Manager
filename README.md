@@ -109,7 +109,7 @@ dotnet ef database update
 dotnet run
 ```
 
-The API will be available at `https://localhost:7000` (or `http://localhost:5000`)
+The API will be available at `http://localhost:5089`
 
 ### Frontend Setup
 
@@ -316,10 +316,18 @@ The application automatically displays project completion status:
 
 Test the API endpoints using tools like Postman or curl:
 
-**Register User:**
+**Local Testing:**
 
 ```bash
-curl -X POST https://localhost:7000/api/auth/register \
+curl -X POST http://localhost:5089/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"username": "testuser", "password": "password123"}'
+```
+
+**Live API Testing:**
+
+```bash
+curl -X POST https://mini-project-manager-wr5q.onrender.com/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{"username": "testuser", "password": "password123"}'
 ```
@@ -327,7 +335,7 @@ curl -X POST https://localhost:7000/api/auth/register \
 **Login:**
 
 ```bash
-curl -X POST https://localhost:7000/api/auth/login \
+curl -X POST https://mini-project-manager-wr5q.onrender.com/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username": "testuser", "password": "password123"}'
 ```
@@ -335,7 +343,7 @@ curl -X POST https://localhost:7000/api/auth/login \
 **Create Project (with token):**
 
 ```bash
-curl -X POST https://localhost:7000/api/projects \
+curl -X POST https://mini-project-manager-wr5q.onrender.com/api/projects \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -d '{"title": "Test Project", "description": "Test Description"}'
@@ -348,6 +356,11 @@ npm test
 ```
 
 ## 🚀 Deployment
+
+### 🌐 Live Application
+
+- **Frontend**: [https://mini-project-manager-lake.vercel.app/register](https://mini-project-manager-lake.vercel.app)
+- **Backend API**: [https://mini-project-manager-wr5q.onrender.com](https://mini-project-manager-wr5q.onrender.com)
 
 ### Backend Deployment
 
