@@ -21,7 +21,6 @@ export default function ProjectDetailsPage() {
 
   const sortTasks = (tasks: TaskItem[]) => {
     return tasks.sort((a, b) => {
-      // Completed tasks go to bottom
       if (a.isCompleted && !b.isCompleted) return 1;
       if (!a.isCompleted && b.isCompleted) return -1;
 
@@ -99,7 +98,6 @@ export default function ProjectDetailsPage() {
 
     const updateData: any = { title: editTitle };
 
-    // Only include dueDate if it has a value
     if (editDueDate) {
       updateData.dueDate = editDueDate;
     }
@@ -112,7 +110,6 @@ export default function ProjectDetailsPage() {
   };
 
   useEffect(() => {
-    // Check if user is authenticated
     const token = localStorage.getItem("token");
     if (!token) {
       window.location.href = "/login";
@@ -125,7 +122,6 @@ export default function ProjectDetailsPage() {
 
   return (
     <div className="p-6 max-w-2xl mx-auto">
-      {/* Project Title */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800">{projectTitle}</h1>
         <button
@@ -136,7 +132,6 @@ export default function ProjectDetailsPage() {
         </button>
       </div>
 
-      {/* Add Task Section */}
       <div className="bg-gray-50 p-4 rounded-lg shadow mb-6">
         <h2 className="text-lg font-semibold mb-3 text-gray-700">
           Add New Task
@@ -164,7 +159,6 @@ export default function ProjectDetailsPage() {
         </div>
       </div>
 
-      {/* Task List */}
       <div>
         <h2 className="text-lg font-semibold mb-3 text-gray-700">Tasks</h2>
         {tasks.length === 0 ? (
@@ -184,7 +178,6 @@ export default function ProjectDetailsPage() {
                   }`}
                 >
                   {isEditing ? (
-                    // Edit mode
                     <div className="flex-1 flex flex-col gap-2">
                       <input
                         type="text"
@@ -215,7 +208,6 @@ export default function ProjectDetailsPage() {
                       </div>
                     </div>
                   ) : (
-                    // View mode
                     <>
                       <div className="flex items-center gap-3 flex-1">
                         <input

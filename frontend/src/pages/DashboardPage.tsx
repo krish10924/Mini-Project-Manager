@@ -10,7 +10,6 @@ export default function DashboardPage() {
   const [descValue, setDescValue] = useState("");
   const navigate = useNavigate();
 
-  // Fetch all projects
   const fetchProjects = async () => {
     try {
       const res = await api.get<Project[]>("/projects");
@@ -18,14 +17,12 @@ export default function DashboardPage() {
     } catch (error: any) {
       console.error("Failed to fetch projects:", error);
       if (error.response?.status === 401) {
-        // Already handled by axios interceptor
         return;
       }
       alert("Failed to load projects. Please try again.");
     }
   };
 
-  // Add new project
   const addProject = async () => {
     if (!title.trim()) return;
     try {
@@ -35,25 +32,22 @@ export default function DashboardPage() {
     } catch (error: any) {
       console.error("Failed to create project:", error);
       if (error.response?.status === 401) {
-        return; // Already handled by axios interceptor
+        return;
       }
       alert("Failed to create project. Please try again.");
     }
   };
 
-  // Delete project
   const deleteProject = async (id: number) => {
     await api.delete(`/projects/${id}`);
     fetchProjects();
   };
 
-  // Logout
   const logout = () => {
     localStorage.removeItem("token");
     navigate("/login");
   };
 
-  // Save updated description
   const saveDescription = async (projectId: number) => {
     await api.put(`/projects/${projectId}`, { description: descValue });
     setEditingId(null);
@@ -61,12 +55,11 @@ export default function DashboardPage() {
     fetchProjects();
   };
 
-  // Get project status based on tasks
   const getProjectStatus = (project: Project) => {
     const tasks = project.tasks || [];
 
     if (tasks.length === 0) {
-      return null; // No status when no tasks
+      return null;
     }
 
     const completedTasks = tasks.filter((task) => task.isCompleted);
@@ -87,7 +80,6 @@ export default function DashboardPage() {
   };
 
   useEffect(() => {
-    // Check if user is authenticated
     const token = localStorage.getItem("token");
     if (!token) {
       navigate("/login");
@@ -99,7 +91,6 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Navbar */}
       <div className="flex justify-between items-center bg-white shadow px-6 py-4 sticky top-0">
         <h1 className="text-2xl font-bold text-gray-800">My Projects</h1>
         <button
@@ -110,9 +101,7 @@ export default function DashboardPage() {
         </button>
       </div>
 
-      {/* Content */}
       <div className="p-6 max-w-3xl mx-auto">
-        {/* Add Project */}
         <div className="flex mb-4">
           <input
             type="text"
@@ -129,7 +118,6 @@ export default function DashboardPage() {
           </button>
         </div>
 
-        {/* Project List */}
         <ul className="space-y-3">
           {projects.map((p) => (
             <li
