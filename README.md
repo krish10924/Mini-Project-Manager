@@ -15,7 +15,7 @@ A full-stack project management application built with .NET Core Web API and Rea
 
 ## 🌐 Live Application
 
-- **Frontend**: [https://mini-project-manager-lake.vercel.app/register](https://mini-project-manager-lake.vercel.app)
+- **Frontend**: [https://mini-project-manager-lake.vercel.app](https://mini-project-manager-lake.vercel.app)
 - **Backend API**: [https://mini-project-manager-wr5q.onrender.com](https://mini-project-manager-wr5q.onrender.com)
 
 ## 🏗️ Architecture
