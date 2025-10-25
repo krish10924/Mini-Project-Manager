@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5289/api", // your .NET API base URL
+  baseURL: "https://mini-project-manager-wr5q.onrender.com/api", 
 });
 
-// Automatically attach JWT from localStorage
+
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token) {
@@ -13,12 +13,12 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Handle authentication errors
+
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Token is invalid or expired
+
       localStorage.removeItem("token");
       window.location.href = "/login";
     }
