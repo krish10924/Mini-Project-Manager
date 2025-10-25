@@ -17,6 +17,7 @@ WORKDIR /app
 # Copy published files from build stage
 COPY --from=build /app/out ./
 
+COPY project.db ./
 # Set environment variable for ASP.NET Core to listen on Render port
 ENV ASPNETCORE_URLS=http://+:${PORT}
 EXPOSE ${PORT}
