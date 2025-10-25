@@ -10,7 +10,7 @@ namespace ProjectManagement.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] // JWT authentication required
+    [Authorize] 
     public class TasksController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -20,7 +20,6 @@ namespace ProjectManagement.Controllers
             _context = context;
         }
 
-        // GET: api/tasks/project/{projectId}
         [HttpGet("project/{projectId}")]
         public async Task<IActionResult> GetTasks(int projectId)
         {
@@ -36,7 +35,6 @@ namespace ProjectManagement.Controllers
             return Ok(project.Tasks);
         }
 
-        // POST: api/tasks
         [HttpPost]
 public async Task<IActionResult> AddTask(TaskCreateDto dto)
 {
@@ -69,7 +67,6 @@ public async Task<IActionResult> AddTask(TaskCreateDto dto)
 }
 
 
-        // PUT: api/tasks/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTask(int id, TaskUpdateDto dto)
         {
@@ -90,7 +87,6 @@ public async Task<IActionResult> AddTask(TaskCreateDto dto)
             return Ok(task);
         }
 
-        // DELETE: api/tasks/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTask(int id)
         {

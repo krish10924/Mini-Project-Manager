@@ -13,7 +13,6 @@ namespace ProjectManagement.Models
 
         public bool IsCompleted { get; set; } = false;
 
-        // Relationship
         public int ProjectId { get; set; }
         public Project? Project { get; set; }
     }

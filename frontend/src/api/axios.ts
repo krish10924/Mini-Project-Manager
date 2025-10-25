@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://mini-project-manager-wr5q.onrender.com/api", // your .NET API base URL
+  baseURL: "http://localhost:5289/api", // your .NET API base URL
 });
 
 // Automatically attach JWT from localStorage

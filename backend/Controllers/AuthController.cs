@@ -23,7 +23,6 @@ namespace ProjectManagement.Controllers
             _config = config;
         }
 
-        // POST: api/auth/register
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserRegisterDto dto)
         {
@@ -42,7 +41,6 @@ namespace ProjectManagement.Controllers
             return Ok(new { token = GenerateJwtToken(user) });
         }
 
-        // POST: api/auth/login
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserLoginDto dto)
         {
@@ -53,7 +51,6 @@ namespace ProjectManagement.Controllers
             return Ok(new { token = GenerateJwtToken(user) });
         }
 
-        // Private helper to generate JWT
         private string GenerateJwtToken(User user)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));

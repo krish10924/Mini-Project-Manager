@@ -14,7 +14,6 @@ namespace ProjectManagement.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        // Relationship
         public int UserId { get; set; }
         public User? User { get; set; }
 

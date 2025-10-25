@@ -20,7 +20,6 @@ namespace ProjectManagement.Controllers
             _context = context;
         }
 
-        // GET: api/projects
         [HttpGet]
         public async Task<IActionResult> GetProjects()
         {
@@ -32,7 +31,6 @@ namespace ProjectManagement.Controllers
             return Ok(projects);
         }
 
-        // POST: api/projects
         [HttpPost]
         public async Task<IActionResult> CreateProject(ProjectCreateDto dto)
         {
@@ -66,7 +64,6 @@ namespace ProjectManagement.Controllers
             return Ok(project);
         }
 
-        // GET: api/projects/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProjectById(int id)
         {
@@ -81,7 +78,6 @@ namespace ProjectManagement.Controllers
             return Ok(project);
         }
 
-        // DELETE: api/projects/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProject(int id)
         {
