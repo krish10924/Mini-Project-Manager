@@ -166,3 +166,4 @@
 /Users/krishnaaggarwal/Desktop/Appsian Coding Assignment/project-manager/backend/obj/Debug/net8.0/backend.genruntimeconfig.cache
 /Users/krishnaaggarwal/Desktop/Appsian Coding Assignment/project-manager/backend/obj/Debug/net8.0/ref/backend.dll
 /Users/krishnaaggarwal/Desktop/Appsian Coding Assignment/project-manager/backend/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/Users/krishnaaggarwal/Desktop/Appsian Coding Assignment/project-manager/backend/obj/Debug/net8.0/backend.sourcelink.json
