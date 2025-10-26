@@ -386,6 +386,12 @@ The built files will be in the `build/` directory, ready for deployment to:
 - Netlify
 - AWS S3 + CloudFront
 - Any static hosting service
+  
+
+### API Configuration
+
+The frontend is configured to connect to the deployed API at [https://smart-scheduling-api-2.onrender.com](https://smart-scheduling-api-2.onrender.com). To use a local backend, update the API URL in the frontend code.
+
 
 ## 🔧 Configuration
 
