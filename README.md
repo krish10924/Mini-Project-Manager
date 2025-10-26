@@ -390,7 +390,7 @@ The built files will be in the `build/` directory, ready for deployment to:
 
 ### API Configuration
 
-The frontend is configured to connect to the deployed API at [https://smart-scheduling-api-2.onrender.com](https://smart-scheduling-api-2.onrender.com). To use a local backend, update the API URL in the frontend code.
+The frontend is configured to connect to the deployed API at [https://mini-project-manager-wr5q.onrender.com](https://mini-project-manager-wr5q.onrender.com). To use a local backend, update the API URL in the frontend code.
 
 
 ## 🔧 Configuration
